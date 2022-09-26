@@ -48,4 +48,4 @@ def spark_conn(app, config):
         print(f"[INFO] Success connect SPARK ENGINE .....")
         return spark
     except:
-        print(f"[INFO] Success Can't SPARK ENGINE .....")
+        print(f"[INFO] Can't connect SPARK ENGINE .....")

@@ -20,6 +20,6 @@
     },
 
     "spark":{
-        "ip":"spark://DESKTOP-0MSIGRU.localdomain:7077"
+        "ip":"spark://dataengineering-VirtualBox:7077"
     }
 }

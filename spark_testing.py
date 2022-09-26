@@ -19,9 +19,9 @@ def spark_conn(app, config):
         print(f"[INFO] Success connect SPARK ENGINE .....")
         return spark
     except:
-        print(f"[INFO] Success Can't SPARK ENGINE .....")
+        print(f"[INFO] Failed Can't SPARK ENGINE .....")
 
-spark = spark_conn('Testing', {"ip":"spark://DESKTOP-0MSIGRU.localdomain:7077"})
+spark = spark_conn('Testing', {"ip":"spark://dataengineering-VirtualBox:7077"})
 
 sparkDF=spark.createDataFrame(pandasDF) 
 da = sparkDF.toPandas()

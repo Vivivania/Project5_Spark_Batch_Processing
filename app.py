@@ -67,9 +67,16 @@ if __name__ == '__main__':
 
         #spark processing
         SparkDF = spark.createDataFrame(df)
-        sparkDF.groupBy("order_date").sum("order_id") \
-            .toPandas() \
-                .to_csv(f"output.csv", index=False)
+        SparkDF.groupBy("order_date").sum("order_id") \
+             .toPandas() \
+                 .to_csv(f"output.csv", index=False)
+
+        #total pendapatan transaksi setiap bulannya
+        df2 = pd.read_csv("output.csv")
+        TotalTrans = spark.createDataFrame(df2)
+        TotalTrans.groupBy("order_date").sum("order_total") \
+             .toPandas() \
+                 .to_csv(f"TotalTransactionPerMonth.csv", index=False)
 
         print(f"[INFO] Service ETL is Success .....")
     except:
